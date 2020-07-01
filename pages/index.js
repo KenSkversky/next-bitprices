@@ -6,7 +6,6 @@ import Prices from '../components/Prices';
 const Index = ({ bpi }) => (
   <Layout>
     <div>
-      const dbSecret= process.env.DB_SECRET
       <h1>Welcome to Bitprices</h1>
       <Prices bpi={bpi} />
     </div>
