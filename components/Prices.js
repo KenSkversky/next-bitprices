@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Prices = ({ bpi }) => {
-  const [currency, setCurrency] = useState('EUR');
+  const [currency, setCurrency] = useState('USD');
   let list = '';
   if (currency === 'USD') {
     list = (

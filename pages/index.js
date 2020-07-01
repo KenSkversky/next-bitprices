@@ -6,15 +6,20 @@ import Prices from '../components/Prices';
 const Index = ({ bpi }) => (
   <Layout>
     <div>
+      const dbSecret= process.env.DB_SECRET
       <h1>Welcome to Bitprices</h1>
       <Prices bpi={bpi} />
     </div>
   </Layout>
 );
-Index.getInitialProps = async () => {
+export async function getStaticProps() {
   const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
   const data = await res.json();
 
-  return { bpi: data };
-};
+  return {
+    props: {
+      bpi: data,
+    },
+  };
+}
 export default Index;
